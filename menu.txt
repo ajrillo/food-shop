@@ -1,0 +1,13 @@
+Sandwich	Condiments	Quantity
+Chicken	Cheese	5
+Beef	Lettuce	8
+Grilled Cheese	Lettuce	3
+Duck	Pineapple	8
+Chicken	Lettuce	10
+Beef	Bacon	2
+Grilled Cheese	Lettuce	7
+Duck	Tomato	1
+Chicken	Pineapple	1
+Beef	Bacon	6
+Grilled Cheese	Lettuce	5
+Duck	Lettuce	4

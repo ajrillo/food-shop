@@ -1,0 +1,16 @@
+<table bgcolor='wheat'>
+<tr>
+<td width='10%' align='left'> <%= link_to (image_tag 'logo.png', border: 2,
+size: "100x100"), home_index_path%></td>
+<td width='60%' align='center'><h1>Chicago Sandwiches</h1></td>
+<td width='20%' align='center'> <%= link_to 'Search', home_search_path%> </td>
+<td width='20%' align='center'><%= link_to 'Login', home_login_path%></td>
+</tr>
+</table>
+<%= link_to 'Home', home_index_path %> &nbsp;
+<%= link_to 'About', home_about_path %> &nbsp;
+<%= link_to 'Contact', home_contact_path %> &nbsp;
+<%= link_to 'Reports', reports_listing_path %> &nbsp;
+<%= link_to 'Promotions', promotions_path %> &nbsp;
+
+<hr>

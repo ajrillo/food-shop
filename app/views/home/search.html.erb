@@ -1,0 +1,29 @@
+<p> <h1>Search for your Favorite Sandwiches</h1> </p> <br>
+<%= form_tag :action => 'search' do %>
+    <p>What type of Sandwich are you looking for?:
+    <%= text_field_tag 'searchinput', @searchinput %> <br>
+    Sandwich Types include: Chicken, Beef, Duck, Grilled Cheese </p>
+    <br/>
+    <% if @results > 0 %>
+    <% if @sandwiches.length >0 %>
+    <p> Here are the search results for <%= @searchinput %>:
+            <table>
+                <tr>
+                <th>Sandwich</th>
+                <th>Condiment</th>
+                <th>Quantity</th>
+            </tr>
+        <% @sandwiches.each do |d| %>
+            <tr>
+                <td><%= link_to d.sandwich %></td>
+                <td><%= d.condiments %></td>
+                <td><%= d.quantity %></td>
+            </tr>
+        <% end %>
+        </table>
+    <% else%>
+    <p>There were no results for <%= @searchinput %>. Try again!</p>
+    <% end %>
+    <% end %>
+    <%= submit_tag 'Search' %>
+<% end %>

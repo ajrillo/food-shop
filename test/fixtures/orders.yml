@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sandwich: MyString
+  condiments: MyString
+  quantity: 1
+
+two:
+  sandwich: MyString
+  condiments: MyString
+  quantity: 1

@@ -1,0 +1,8 @@
+Adress	Street	City	State	ZipCode
+1648	State	Chicago	Illinois	60706
+1836	Jackson	Chicago	Illinois	60458
+7359	Winnemac	Chicago	Illinois	69185
+4732	Lasalle	Chicago	Illinois	60395
+1847	Belmot	Chicago	Illinois	60298
+3167	Montrose	Chicago	Illinois	60715
+2168	Addison	Chicago	Illinois	60486

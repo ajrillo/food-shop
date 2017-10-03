@@ -1,0 +1,22 @@
+<h1>Preferences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sandwich</th>
+      <th>Condiments</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.sandwich %></td>
+        <td><%= order.condiments %></td>
+        <td><%= order.quantity %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>

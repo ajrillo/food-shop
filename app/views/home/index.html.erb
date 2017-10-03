@@ -1,0 +1,55 @@
+<h1>Chicago Sandwiches</h1>
+<p>Todays Date is <%= @datetime.to_date.strftime('%B %e, %Y') %>.</p><br>
+<%# http://api.rubyonrails.org/classes/Date.html %>
+<%# I learned how to display time with strftime('') from the api %>
+<%# &nbsp; blank space %>
+
+<p>Active Promotions!</p>
+<% for i in @promotions.where("? <= EndDate and ? >= StartDate", @datetime.to_date, @datetime.to_date) %>
+    <ul>
+        <li><%= i.Title %> is active until <%= i.EndDate.strftime('%B %e, %Y') %>. </li> <br>
+        <li> <%= image_tag i.ImagePath %> </li>
+    </ul>
+    <%# image_tag("#{i.ImagePath}") %>
+    <%# Trying to display the image from the i.ImagePath but idk why it wont work%>
+<%end%>
+
+<p>Expired Promotions!</p>
+<% for i in @promotions.where("? >= EndDate", @datetime.to_date)%>
+    <ul>
+        <li><%= i.Title %> expired on <%= i.EndDate.strftime('%B %e, %Y') %>. </li>
+        <li> <%= image_tag i.ImagePath %> </li>
+    </ul>
+<%end%>
+
+<p>Future Promotions!</p>
+<% for i in @promotions.where("? < StartDate", @datetime.to_date)%>
+    <ul>
+        <li><%= i.Title %> starts on <%= i.StartDate.strftime('%B %e, %Y') %>.</li>
+        <li> <%= image_tag i.ImagePath %> </li>
+    </ul>
+<%end%>
+
+<br>
+
+<p>Create New User </p> 
+    <%= form_tag :action => 'index' do %>
+    Username: <%= text_field_tag 'username', '' %> <br>
+    Email: <%= email_field_tag 'email', 'example@email.com' %> <br>
+    Password:  <%= password_field_tag 'password', nil, maxlength: 12 %> <br>
+    <%= submit_tag 'Create' %>
+
+    <% if @aUser > 0 %>
+        <p>New User Created</p>
+    <% elsif @aUser == 0 %>
+        <p>Create a new User </p>
+    <% else %>
+        <p>User Creation Failed</p>
+    <% end %>
+
+    <% end %>
+
+<br>
+<h3>Click Bellow to Place an Order</h3>
+<p><%= link_to 'To Place an Order', orders_path %></p>
+<p><%= link_to 'To Place a Delivery', deliveries_path %></p>
